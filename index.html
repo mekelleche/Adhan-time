@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adhan Times in Algeria</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Adhan Times in Algeria</h1>
+
+    <div class="form-group">
+      <label for="city">Choose a city:</label>
+      <select id="city"></select>
+      <button onclick="getAdhanTimes()">Get Adhan Times</button>
+    </div>
+
+    <div id="adhan-times" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

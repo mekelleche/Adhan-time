@@ -1,0 +1,108 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f4f7f9, #e8edf2);
+  color: #333;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Heading */
+h1 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Dropdown and button container */
+label, select, button {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 200px;
+  background-color: #fff;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  border: none;
+  background-color: #2980b9;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c5980;
+}
+
+/* Prayer times display */
+#prayer-times {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  text-align: left;
+}
+
+#prayer-times h2 {
+  color: #34495e;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+#prayer-times ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#prayer-times li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  border-left: 4px solid #3498db;
+  padding-left: 0.6rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+
+  button, select {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  #prayer-times {
+    padding: 1rem;
+  }
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
