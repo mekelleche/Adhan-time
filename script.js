@@ -35,16 +35,25 @@ function getAdhanTimes() {
       const date = data.data.date.readable;
 
       const html = `
-        <h2>Prayer Times for ${city} (${date})</h2><br>
-        <ul>
-          <li><strong>Fajr:</strong> ${times.Fajr}</li>
-          <li><strong>Dhuhr:</strong> ${times.Dhuhr}</li>
-          <li><strong>Asr:</strong> ${times.Asr}</li>
-          <li><strong>Maghrib:</strong> ${times.Maghrib}</li>
-          <li><strong>Isha:</strong> ${times.Isha}</li>
-        </ul>
-      `;
-      document.getElementById("adhan-times").innerHTML = html;
+        <h2>Adhan Times for ${city} (${date})</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Prayer</th>
+                <th>Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>Fajr</td><td>${times.Fajr}</td></tr>
+            <tr><td>Dhuhr</td><td>${times.Dhuhr}</td></tr>
+            <tr><td>Asr</td><td>${times.Asr}</td></tr>
+            <tr><td>Maghrib</td><td>${times.Maghrib}</td></tr>
+            <tr><td>Isha</td><td>${times.Isha}</td></tr>
+            </tbody>
+        </table>
+        `;
+        document.getElementById("adhan-times").innerHTML = html;
+
     })
     .catch(error => {
       console.error("Error fetching prayer times:", error);

@@ -6,103 +6,302 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #f4f7f9, #e8edf2);
-  color: #333;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* Heading */
 h1 {
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
+  margin-bottom: 2rem;
+  color: #1e293b;
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.025em;
 }
 
-/* Dropdown and button container */
-label, select, button {
-  font-size: 1rem;
-  margin: 0.5rem 0;
+/* Form container */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* Labels */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Select dropdown */
 select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  min-width: 200px;
-  background-color: #fff;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  min-width: 220px;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+  outline: none;
 }
 
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+select:hover {
+  border-color: #9ca3af;
+}
+
+/* Button */
 button {
-  padding: 0.6rem 1.2rem;
-  margin-left: 0.5rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  background-color: #2980b9;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 6px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease-in-out;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 button:hover {
-  background-color: #1c5980;
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }
 
 /* Prayer times display */
 #prayer-times {
-  margin-top: 2rem;
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 450px;
+  margin-top: 1rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
   width: 100%;
-  text-align: left;
+  border: 1px solid #e5e7eb;
 }
 
 #prayer-times h2 {
-  color: #34495e;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f3f4f6;
 }
 
+/* List styles */
 #prayer-times ul {
   list-style-type: none;
   padding-left: 0;
+  display: grid;
+  gap: 0.75rem;
 }
 
 #prayer-times li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-  border-left: 4px solid #3498db;
-  padding-left: 0.6rem;
-  background-color: #f8f9fa;
-  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 1rem 1.25rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media (max-width: 500px) {
+#prayer-times li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #3b82f6;
+  border-radius: 0 4px 4px 0;
+}
+
+#prayer-times li:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateX(4px);
+}
+
+#prayer-times li strong {
+  color: #374151;
+  font-weight: 500;
+}
+
+#prayer-times li span {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  max-width: 450px;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+th, td {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+td {
+  font-weight: 400;
+  color: #4b5563;
+  transition: background-color 0.15s ease-in-out;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #f9fafb;
+}
+
+/* Card-like container for the whole app */
+.app-container {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+  margin: 0 auto;
+  border: 1px solid #e5e7eb;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   body {
     padding: 1rem;
   }
 
+  .app-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    padding: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
   button, select {
     width: 100%;
-    margin: 0.5rem 0;
+    max-width: 300px;
+    margin: 0.25rem 0;
+  }
+
+  #prayer-times {
+    padding: 1.5rem;
+  }
+
+  #prayer-times li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.625rem;
   }
 
   #prayer-times {
     padding: 1rem;
   }
+
+  th, td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
 }
-.form-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
+
+/* Loading state */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Focus management */
+*:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
